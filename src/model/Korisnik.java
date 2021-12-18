@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.thoughtworks.xstream.annotations.XStreamAlias;
+import com.thoughtworks.xstream.annotations.XStreamOmitField;
 
 import observer.IzmenaKorisnikaEvent;
 import observer.Observer;
@@ -21,6 +22,8 @@ public class Korisnik implements Publisher {
 	private LocalDate datumRodjenja;
 	private LocalDate datumZaposlenja;
 	private KorisnickiNalog korisnickiNalog;
+	
+	@XStreamOmitField
 	private List<Observer> observers;
 	
 	public Korisnik() {}

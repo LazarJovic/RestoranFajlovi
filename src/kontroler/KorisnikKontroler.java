@@ -43,8 +43,6 @@ public class KorisnikKontroler {
 		}
 		
 		KorisniciLista.getInstance().izmeniKorisnika(ime, prezime, telefon, email, stariEmail);
-		KorisniciLista korLista = KorisniciLista.getInstance();
-		System.out.println(korLista.getKorisnici().get(0).getTelefon());
 		korisnik.azurirajKorisnika(ime, prezime, telefon, email);
 	}
 	

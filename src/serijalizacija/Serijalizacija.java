@@ -45,7 +45,6 @@ public class Serijalizacija {
 			isKorisnici.close();
 		}
 		KorisniciLista.setInstance(korisniciLista);
-		System.out.println(KorisniciLista.getInstance().getKorisnici().get(0).getEmail());
 	}
 	
 	public XStream getXStream() {
