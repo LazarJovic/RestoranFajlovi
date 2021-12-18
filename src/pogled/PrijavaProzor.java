@@ -10,8 +10,12 @@ import java.awt.event.ActionListener;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
+import izuzeci.BadCredentialsException;
+import izuzeci.MissingValueException;
+import kontroler.AuthKontroler;
 import net.miginfocom.swing.MigLayout;
 import util.PogledUtil;
 
@@ -24,7 +28,7 @@ public class PrijavaProzor extends JFrame {
 	private TekstPolje tfKorIme;
 	private LozinkaPolje tfLozinka;
 	
-	//private AuthKontroler authKontroler;
+	private AuthKontroler authKontroler;
 	
 	public PrijavaProzor() {
 		setSize(new Dimension(500, 400));
@@ -33,7 +37,7 @@ public class PrijavaProzor extends JFrame {
 		setLocationRelativeTo(null);
 		setResizable(false);
 	
-		//this.authKontroler = new AuthKontroler();
+		this.authKontroler = new AuthKontroler();
 		
 		Font fntNaslov = PogledUtil.getMaliNaslovFont();
 		Font fntLabela = PogledUtil.getLabelaFont();
@@ -61,16 +65,17 @@ public class PrijavaProzor extends JFrame {
 			
 			@Override
 			public void actionPerformed(ActionEvent event) {
-//				try {
-//					String uloga = authKontroler.login(tfKorIme.getText(), String.valueOf(tfLozinka.getPassword()));
-//					zatvori();
+				try {
+					String uloga = authKontroler.login(tfKorIme.getText(), String.valueOf(tfLozinka.getPassword()));
+					zatvori();
+					System.out.println("ulogovan!");
 //					PocetniProzor procetniProzor = new PocetniProzorFabrika().napraviPocetniProzor(uloga);
 //					procetniProzor.setVisible(true);
-//				} catch (MissingValueException e) {
-//					JOptionPane.showMessageDialog(null, e.getMessage(), e.getNaslov(), JOptionPane.ERROR_MESSAGE);
-//				} catch (BadCredentialsException e) {
-//					JOptionPane.showMessageDialog(null, e.getMessage(), e.getNaslov(), JOptionPane.ERROR_MESSAGE);	
-//				}
+				} catch (MissingValueException e) {
+					JOptionPane.showMessageDialog(null, e.getMessage(), e.getNaslov(), JOptionPane.ERROR_MESSAGE);
+				} catch (BadCredentialsException e) {
+					JOptionPane.showMessageDialog(null, e.getMessage(), e.getNaslov(), JOptionPane.ERROR_MESSAGE);	
+				}
 			}
 		});
 		
