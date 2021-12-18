@@ -17,6 +17,8 @@ import izuzeci.BadCredentialsException;
 import izuzeci.MissingValueException;
 import kontroler.AuthKontroler;
 import net.miginfocom.swing.MigLayout;
+import pogled.pocetni_prozor.PocetniProzor;
+import pogled.pocetni_prozor.PocetniProzorFabrika;
 import util.PogledUtil;
 
 public class PrijavaProzor extends JFrame {
@@ -68,9 +70,8 @@ public class PrijavaProzor extends JFrame {
 				try {
 					String uloga = authKontroler.login(tfKorIme.getText(), String.valueOf(tfLozinka.getPassword()));
 					zatvori();
-					System.out.println("ulogovan!");
-//					PocetniProzor procetniProzor = new PocetniProzorFabrika().napraviPocetniProzor(uloga);
-//					procetniProzor.setVisible(true);
+					PocetniProzor procetniProzor = new PocetniProzorFabrika().napraviPocetniProzor(uloga);
+					procetniProzor.setVisible(true);
 				} catch (MissingValueException e) {
 					JOptionPane.showMessageDialog(null, e.getMessage(), e.getNaslov(), JOptionPane.ERROR_MESSAGE);
 				} catch (BadCredentialsException e) {
@@ -85,7 +86,6 @@ public class PrijavaProzor extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				System.exit(0);
-				
 			}
 		});
 		

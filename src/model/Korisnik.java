@@ -1,31 +1,30 @@
 package model;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 
+import observer.IzmenaKorisnikaEvent;
+import observer.Observer;
+import observer.Publisher;
+
 @XStreamAlias("korisnik")
-public class Korisnik {
+public class Korisnik implements Publisher {
 	
 	private int id;
-	
 	private String ime;
-	
 	private String prezime;
-	
 	private String telefon;
-	
 	private String email;
-	
 	private LocalDate datumRodjenja;
-	
 	private LocalDate datumZaposlenja;
-	
 	private KorisnickiNalog korisnickiNalog;
-	// TODO: Dodaj listu observera
+	private List<Observer> observers;
 	
 	public Korisnik() {}
-
+	
 	public Korisnik(int id, String ime, String prezime, String telefon, String email, LocalDate datumRodjenja,
 			LocalDate datumZaposlenja, KorisnickiNalog korisnickiNalog) {
 		super();
@@ -108,8 +107,28 @@ public class Korisnik {
 		this.setPrezime(prezime);
 		this.setTelefon(telefon);
 		this.setEmail(email);
-		//this.notifyObservers();
+		this.notifyObservers();
 	}
-	
-	// TODO: Napravi da je Korisnik Publisher
+
+	@Override
+	public void addObserver(Observer observer) {
+		if (observers == null)
+			observers = new ArrayList<Observer>();
+		observers.add(observer);
+	}
+
+	@Override
+	public void removeObserver(Observer observer) {
+		if (null == observers)
+			return;
+		observers.remove(observer);
+	}
+
+	@Override
+	public void notifyObservers() {
+		IzmenaKorisnikaEvent izmenaKorisnikaEvent = new IzmenaKorisnikaEvent(this);
+		for (Observer observer : observers) {
+			observer.updatePerformed(izmenaKorisnikaEvent);
+		}		
+	}
 }
