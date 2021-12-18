@@ -1,15 +1,11 @@
 package model;
 
-import com.thoughtworks.xstream.annotations.XStreamAlias;
-
 import enums.Uloga;
 
 public class KorisnickiNalog {
 	
 	private String lozinka;
-	
 	private String korisnickoIme;
-	
 	private Uloga uloga;
 	
 	public KorisnickiNalog() {}

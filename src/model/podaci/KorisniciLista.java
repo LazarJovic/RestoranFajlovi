@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.stream.Collectors;
 
 import com.thoughtworks.xstream.annotations.XStreamAlias;
-import com.thoughtworks.xstream.annotations.XStreamOmitField;
 
 import model.Korisnik;
 
@@ -15,10 +14,7 @@ public class KorisniciLista {
 	
 	@XStreamAlias("korisnici")	
 	private ArrayList<Korisnik> korisnici;
-	
-	@XStreamOmitField
-	private long idGenerator;
-	
+		
 	private KorisniciLista() {
 		this.korisnici = new ArrayList<Korisnik>();
 	}
@@ -31,8 +27,9 @@ public class KorisniciLista {
 		return instance;
 	}
 
-	private long generisiId() {
-		return ++idGenerator;
+	public long generisiId() {
+		int brojKorisnika = korisnici.size();
+		return ++brojKorisnika;
 	}
 	
 	public static void setInstance(KorisniciLista korisniciLista) {
@@ -47,8 +44,9 @@ public class KorisniciLista {
 		this.korisnici = korisnici;
 	}
 	
-	public void dodajKorisnika(Korisnik korisnik) {
+	public Korisnik dodajKorisnika(Korisnik korisnik) {
 		this.korisnici.add(korisnik);
+		return korisnik;
 	}
 	
 	public void izmeniKorisnika(String ime,String prezime,String telefon,String email,String stariEmail) {

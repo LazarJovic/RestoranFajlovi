@@ -42,5 +42,19 @@
         <uloga>MENADZER</uloga>
       </korisnickiNalog>
     </korisnik>
+    <korisnik>
+      <id>4</id>
+      <ime>tgtg</ime>
+      <prezime>gtgt</prezime>
+      <telefon>54353</telefon>
+      <email>gtgtg@r.co</email>
+      <datumRodjenja>1998-12-12</datumRodjenja>
+      <datumZaposlenja>2021-12-18</datumZaposlenja>
+      <korisnickiNalog>
+        <lozinka>ec004ef0da5bde09ed611533bdd9ccaf041514be632814ba1303f6725eedff7b</lozinka>
+        <korisnickoIme>tgtgtg</korisnickoIme>
+        <uloga>MENADZER</uloga>
+      </korisnickiNalog>
+    </korisnik>
   </korisnici>
 </korisniciLista>

@@ -14,7 +14,7 @@ import observer.Publisher;
 @XStreamAlias("korisnik")
 public class Korisnik implements Publisher {
 	
-	private int id;
+	private long id;
 	private String ime;
 	private String prezime;
 	private String telefon;
@@ -28,7 +28,7 @@ public class Korisnik implements Publisher {
 	
 	public Korisnik() {}
 	
-	public Korisnik(int id, String ime, String prezime, String telefon, String email, LocalDate datumRodjenja,
+	public Korisnik(long id, String ime, String prezime, String telefon, String email, LocalDate datumRodjenja,
 			LocalDate datumZaposlenja, KorisnickiNalog korisnickiNalog) {
 		super();
 		this.id = id;
@@ -41,11 +41,11 @@ public class Korisnik implements Publisher {
 		this.korisnickiNalog = korisnickiNalog;
 	}
 	
-	public int getId() {
+	public long getId() {
 		return this.id;
 	}
 
-	public void setId(int id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 	

@@ -23,6 +23,7 @@ import observer.Observer;
 import pogled.FormaDugme;
 import pogled.Labela;
 import pogled.PadajucaLista;
+import pogled.dijalog.DijalogRegistrovanjeZaposlenog;
 import pogled.tabela.zaposleni.TabelaModelZaposleni;
 import pogled.tabela.zaposleni.TabelaZaposleni;
 import util.PogledUtil;
@@ -69,8 +70,8 @@ public class PanelZaposleni extends JPanel implements Observer {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-//				DijalogRegistrovanjeZaposlenog dijalogRegistrovanjeZaposlenog = new DijalogRegistrovanjeZaposlenog(korisnikKontroler, (TabelaModelZaposleni) tabelaZaposleni.getModel());
-//				dijalogRegistrovanjeZaposlenog.setVisible(true);
+				DijalogRegistrovanjeZaposlenog dijalogRegistrovanjeZaposlenog = new DijalogRegistrovanjeZaposlenog(korisnikKontroler, (TabelaModelZaposleni) tabelaZaposleni.getModel());
+				dijalogRegistrovanjeZaposlenog.setVisible(true);
 			}
 		});
 		
