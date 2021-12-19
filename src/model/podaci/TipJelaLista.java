@@ -1,6 +1,7 @@
 package model.podaci;
 
 import java.util.ArrayList;
+import java.util.stream.Collectors;
 
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 
@@ -55,5 +56,17 @@ public class TipJelaLista {
 		});
 		
 		return nazivi;
+	}
+	
+	public TipJela dobaviTipPoNazivu(String naziv) {
+		ArrayList<TipJela> pronadjeniTipovi = (ArrayList<TipJela>) tipoviJela
+				.stream()
+				.filter(tipJela -> tipJela.getNaziv().equals(naziv))
+				.collect(Collectors.toList());
+		if (pronadjeniTipovi.size() == 0) {
+			return null;
+		}
+		
+		return pronadjeniTipovi.get(0);
 	}
 }

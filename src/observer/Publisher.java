@@ -7,5 +7,4 @@ public interface Publisher {
 	public void removeObserver(Observer observer);
 	
 	public void notifyObservers();
-	
 }

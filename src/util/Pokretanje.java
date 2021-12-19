@@ -17,7 +17,6 @@ import model.KorisnickiNalog;
 import model.Korisnik;
 import model.SlikaJela;
 import model.TipJela;
-import model.podaci.CenaLista;
 import model.podaci.CenovnikLista;
 import model.podaci.JelaLista;
 import model.podaci.KorisniciLista;
@@ -58,13 +57,13 @@ public class Pokretanje {
 		TipJela tipJela3 = new TipJela(3, "Supe i čorbe");
 		
 		Jelo jelo1 = new Jelo(1, "Ćevapi", "Odlični ćevapi","adadsad", false, tipJela1, new SlikaJela("/cevapi.jpg"));
-		Jelo jelo2 = new Jelo(1, "Kobasica", "Prava domaca","dfgdfg", false, tipJela1, new SlikaJela("/rostiljKobasica.jpg"));
-		Jelo jelo3 = new Jelo(1, "Mesano meso", "Svega po malo, 1kg","cvbcvb", false, tipJela1, new SlikaJela("/mesanoMeso.jpg"));
+		Jelo jelo2 = new Jelo(2, "Kobasica", "Prava domaca","dfgdfg", false, tipJela1, new SlikaJela("/rostiljKobasica.jpg"));
+		Jelo jelo3 = new Jelo(3, "Mesano meso", "Svega po malo, 1kg","cvbcvb", false, tipJela1, new SlikaJela("/mesanoMeso.jpg"));
 	
-		Cena cena1 = new Cena(1, 350, 0, LocalDate.parse("2020-07-04"));
-		Cena cena2 = new Cena(2, 280, 0, LocalDate.parse("2021-05-10"));
-		Cena cena3 = new Cena(3, 1100, 0, LocalDate.parse("2018-03-12"));
-		Cena cena4 = new Cena(4, 1100, 0, LocalDate.parse("2019-03-12"));
+		Cena cena1 = new Cena(350, 0, LocalDate.parse("2020-07-04"));
+		Cena cena2 = new Cena(280, 0, LocalDate.parse("2021-05-10"));
+		Cena cena3 = new Cena(1100, 0, LocalDate.parse("2018-03-12"));
+		Cena cena4 = new Cena(1100, 0, LocalDate.parse("2019-03-12"));
 	       
 		Cenovnik cenovnik1 = new Cenovnik(1, new ArrayList<Cena>(Arrays.asList(cena1, cena2)));
 		Cenovnik cenovnik2 = new Cenovnik(2, new ArrayList<Cena>(Arrays.asList(cena2, cena3)));

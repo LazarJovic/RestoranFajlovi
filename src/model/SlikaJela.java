@@ -17,5 +17,4 @@ public class SlikaJela {
 	public void setPutanja(String putanja) {
 		this.putanja = putanja;
 	}
-	
 }

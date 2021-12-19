@@ -7,26 +7,16 @@ import com.thoughtworks.xstream.annotations.XStreamAlias;
 @XStreamAlias("cena")
 public class Cena {
 
-	private long id;
 	private float vrednost;
 	private float popust;
 	private LocalDate kreirana;
 	
 	public Cena() {}
 	
-	public Cena(long id, float vrednost, float popust, LocalDate kreirana) {
-		this.id = id;
+	public Cena(float vrednost, float popust, LocalDate kreirana) {
 		this.vrednost = vrednost;
 		this.popust = popust;
 		this.kreirana = kreirana;
-	}
-	
-	public long getId() {
-		return id;
-	}
-	
-	public void setId(long id) {
-		this.id = id;
 	}
 	
 	public float getVrednost() {

@@ -4,7 +4,7 @@
       <id>1</id>
       <ime>Admir</ime>
       <prezime>Admirovic</prezime>
-      <telefon>9999</telefon>
+      <telefon>5346565</telefon>
       <email>admin@maildrop.cc</email>
       <datumRodjenja>1990-07-04</datumRodjenja>
       <datumZaposlenja>2008-07-04</datumZaposlenja>
@@ -39,20 +39,6 @@
       <korisnickiNalog>
         <lozinka>765e80b06e58c709836f8bb7e973b80c388ae3214969db59a5d60f5482efdbb7</lozinka>
         <korisnickoIme>menadzer</korisnickoIme>
-        <uloga>MENADZER</uloga>
-      </korisnickiNalog>
-    </korisnik>
-    <korisnik>
-      <id>4</id>
-      <ime>tgtg</ime>
-      <prezime>gtgt</prezime>
-      <telefon>54353</telefon>
-      <email>gtgtg@r.co</email>
-      <datumRodjenja>1998-12-12</datumRodjenja>
-      <datumZaposlenja>2021-12-18</datumZaposlenja>
-      <korisnickiNalog>
-        <lozinka>ec004ef0da5bde09ed611533bdd9ccaf041514be632814ba1303f6725eedff7b</lozinka>
-        <korisnickoIme>tgtgtg</korisnickoIme>
         <uloga>MENADZER</uloga>
       </korisnickiNalog>
     </korisnik>

@@ -14,5 +14,4 @@ public class TipJelaKontroler {
 		String[] naziviTipovaJela = new String[nazivi.size()];
 		return nazivi.toArray(naziviTipovaJela);
 	}
-	
 }

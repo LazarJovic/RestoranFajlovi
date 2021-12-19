@@ -21,12 +21,12 @@ import kontroler.JeloKontroler;
 import kontroler.TipJelaKontroler;
 import model.JeloCena;
 import model.PrijavljenKorisnik;
-import model.podaci.TipJelaLista;
 import net.miginfocom.swing.MigLayout;
 import observer.Observer;
 import pogled.FormaDugme;
 import pogled.Labela;
 import pogled.PadajucaLista;
+import pogled.dijalog.DijalogDodavanjeJela;
 import pogled.tabela.jelovnik.TabelaJelovnik;
 import pogled.tabela.jelovnik.TabelaModelJelovnik;
 import util.PogledUtil;
@@ -75,16 +75,14 @@ public class PanelJelovnik extends JPanel implements Observer {
 		Labela lblTipJela = new Labela("Tip jela:", fntTekstPolje, clrForeground);
 		PadajucaLista plTipoviZaposlenih = new PadajucaLista(naziviTipovaJela, 
 				clrPrimarna, clrForeground, fntTekstPolje, 140, 30);
-		
-		//TODO: Vidljivo samo kada je sef kuhinje ulogovan
-		//TODO: Dodaj action listener
+
 		FormaDugme btnDodajJelo = new FormaDugme("Dodaj jelo", clrPrimarna, clrForeground, 150, 20);
 		btnDodajJelo.addActionListener(new ActionListener() {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-//				DijalogDodavanjeJela dijalogDodavanjeJela = new DijalogDodavanjeJela(jeloKontroler, naziviTipovaJela, (TabelaModelJelovnik) tabelaJelovnik.getModel());
-//				dijalogDodavanjeJela.setVisible(true);
+				DijalogDodavanjeJela dijalogDodavanjeJela = new DijalogDodavanjeJela(jeloKontroler, naziviTipovaJela, (TabelaModelJelovnik) tabelaJelovnik.getModel());
+				dijalogDodavanjeJela.setVisible(true);
 			}
 		});
 		
@@ -126,6 +124,6 @@ public class PanelJelovnik extends JPanel implements Observer {
 
 	@Override
 	public void updatePerformed(EventObject e) {
-		//azurirajPrikaz();
+		azurirajPrikaz();
 	}
 }

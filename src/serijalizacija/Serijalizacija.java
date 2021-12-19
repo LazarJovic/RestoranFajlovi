@@ -12,7 +12,6 @@ import java.io.OutputStream;
 import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.security.AnyTypePermission;
 
-import model.podaci.CenaLista;
 import model.podaci.CenovnikLista;
 import model.podaci.JelaLista;
 import model.podaci.KorisniciLista;
@@ -28,7 +27,6 @@ public class Serijalizacija {
 		xstream.processAnnotations(KorisniciLista.class);
 		xstream.processAnnotations(TipJelaLista.class);
 		xstream.processAnnotations(JelaLista.class);
-		xstream.processAnnotations(CenaLista.class);
 		xstream.processAnnotations(CenovnikLista.class);
 	}
 	
