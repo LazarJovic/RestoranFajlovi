@@ -1,0 +1,40 @@
+<jelaLista>
+  <jela>
+    <jelo>
+      <id>1</id>
+      <naziv>Ćevapi</naziv>
+      <opis>Odlični ćevapi</opis>
+      <recept>adadsad</recept>
+      <uklonjeno>false</uklonjeno>
+      <tipJela>
+        <id>1</id>
+        <naziv>Rostilj</naziv>
+      </tipJela>
+      <slikaJela>
+        <putanja>/cevapi.jpg</putanja>
+      </slikaJela>
+    </jelo>
+    <jelo>
+      <id>1</id>
+      <naziv>Kobasica</naziv>
+      <opis>Prava domaca</opis>
+      <recept>dfgdfg</recept>
+      <uklonjeno>false</uklonjeno>
+      <tipJela reference="../../jelo/tipJela"/>
+      <slikaJela>
+        <putanja>/rostiljKobasica.jpg</putanja>
+      </slikaJela>
+    </jelo>
+    <jelo>
+      <id>1</id>
+      <naziv>Mesano meso</naziv>
+      <opis>Svega po malo, 1kg</opis>
+      <recept>cvbcvb</recept>
+      <uklonjeno>false</uklonjeno>
+      <tipJela reference="../../jelo/tipJela"/>
+      <slikaJela>
+        <putanja>/mesanoMeso.jpg</putanja>
+      </slikaJela>
+    </jelo>
+  </jela>
+</jelaLista>

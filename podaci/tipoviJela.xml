@@ -1,0 +1,16 @@
+<tipoviJelaLista>
+  <tipoviJela>
+    <tipJela>
+      <id>1</id>
+      <naziv>Rostilj</naziv>
+    </tipJela>
+    <tipJela>
+      <id>2</id>
+      <naziv>Paste</naziv>
+    </tipJela>
+    <tipJela>
+      <id>3</id>
+      <naziv>Supe i čorbe</naziv>
+    </tipJela>
+  </tipoviJela>
+</tipoviJelaLista>

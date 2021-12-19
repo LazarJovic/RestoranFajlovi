@@ -7,18 +7,28 @@ import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.EventObject;
+import java.util.List;
 
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 
 import enums.Uloga;
+import izuzeci.ResultEmptyException;
+import kontroler.JeloKontroler;
+import kontroler.TipJelaKontroler;
+import model.JeloCena;
 import model.PrijavljenKorisnik;
+import model.podaci.TipJelaLista;
 import net.miginfocom.swing.MigLayout;
 import observer.Observer;
 import pogled.FormaDugme;
 import pogled.Labela;
 import pogled.PadajucaLista;
+import pogled.tabela.jelovnik.TabelaJelovnik;
+import pogled.tabela.jelovnik.TabelaModelJelovnik;
 import util.PogledUtil;
 
 public class PanelJelovnik extends JPanel implements Observer {
@@ -27,12 +37,12 @@ public class PanelJelovnik extends JPanel implements Observer {
 	 * 
 	 */
 	private static final long serialVersionUID = -7893396793228337113L;
-//	private List<JeloCena> jelovnik;
-//	private JeloKontroler jeloKontroler;
-//	private TipJelaKontroler tipJelaKontroler;
+	private List<JeloCena> jelovnik;
+	private JeloKontroler jeloKontroler;
+	private TipJelaKontroler tipJelaKontroler;
 	private String[] naziviTipovaJela = new String[] {"Rostilj", "Paste", "Supe"};
 	
-//	private TabelaJelovnik tabelaJelovnik;
+	private TabelaJelovnik tabelaJelovnik;
 
 	public PanelJelovnik() {
 		setName("Jelovnik");
@@ -46,13 +56,13 @@ public class PanelJelovnik extends JPanel implements Observer {
 		
 		setBackground(clrSekundarna);
 		
-//		jeloKontroler = new JeloKontroler();
-//		tipJelaKontroler = new TipJelaKontroler();
-//		try {
-//			this.jelovnik = jeloKontroler.dobaviJela();
-//		} catch (ResultEmptyException e) {
-//			JOptionPane.showMessageDialog(null, e.getMessage(), e.getNaslov(), JOptionPane.INFORMATION_MESSAGE);
-//		}
+		jeloKontroler = new JeloKontroler();
+		tipJelaKontroler = new TipJelaKontroler();
+		try {
+			this.jelovnik = jeloKontroler.dobaviJelaSaCenama();
+		} catch (ResultEmptyException e) {
+			JOptionPane.showMessageDialog(null, e.getMessage(), e.getNaslov(), JOptionPane.INFORMATION_MESSAGE);
+		}
 		Labela lblNaslov = new Labela("Jelovnik restorana", fntNaslov, clrForeground);
 		
 		JLabel lblImage = new JLabel("");
@@ -60,12 +70,7 @@ public class PanelJelovnik extends JPanel implements Observer {
 		Image image = new ImageIcon(this.getClass().getResource("/menu96.png")).getImage();
 		lblImage.setIcon(new ImageIcon(image));
 		
-//		this.naziviTipovaJela = null;
-//		try {
-//			this.naziviTipovaJela = tipJelaKontroler.dobaviNaziveTipovaJela();
-//		} catch (ResultEmptyException e) {
-//			JOptionPane.showMessageDialog(null, e.getMessage(), e.getNaslov(), JOptionPane.INFORMATION_MESSAGE);
-//		}
+		this.naziviTipovaJela = tipJelaKontroler.dobaviNaziveTipovaJela();
 		
 		Labela lblTipJela = new Labela("Tip jela:", fntTekstPolje, clrForeground);
 		PadajucaLista plTipoviZaposlenih = new PadajucaLista(naziviTipovaJela, 
@@ -97,27 +102,27 @@ public class PanelJelovnik extends JPanel implements Observer {
 			btnDodajJelo.setVisible(false);
 
 		}
-		//this.inicijalizujTabeluZaposlenih();
+		this.inicijalizujTabeluZaposlenih();
 	}
 	
 	private void inicijalizujTabeluZaposlenih() {
 		
-//		TabelaModelJelovnik tabelaModelJelovnik = new TabelaModelJelovnik(jelovnik);
-//		tabelaModelJelovnik.addObserver(this);
-//		this.tabelaJelovnik = new TabelaJelovnik(tabelaModelJelovnik);
-//		JScrollPane scrollPane = new JScrollPane(tabelaJelovnik);
-//		scrollPane.setPreferredSize(new Dimension(800, 500));
-//		
-//		add(scrollPane, "wrap, span2, align center");
-//		
-//		this.azurirajPrikaz();
+		TabelaModelJelovnik tabelaModelJelovnik = new TabelaModelJelovnik(jelovnik);
+		tabelaModelJelovnik.addObserver(this);
+		this.tabelaJelovnik = new TabelaJelovnik(tabelaModelJelovnik);
+		JScrollPane scrollPane = new JScrollPane(tabelaJelovnik);
+		scrollPane.setPreferredSize(new Dimension(800, 500));
+		
+		add(scrollPane, "wrap, span2, align center");
+		
+		this.azurirajPrikaz();
 	}
 	
-//	private void azurirajPrikaz() {
-//		TabelaModelJelovnik model = (TabelaModelJelovnik) tabelaJelovnik.getModel();
-//		model.fireTableDataChanged();
-//		validate();
-//	}
+	private void azurirajPrikaz() {
+		TabelaModelJelovnik model = (TabelaModelJelovnik) tabelaJelovnik.getModel();
+		model.fireTableDataChanged();
+		validate();
+	}
 
 	@Override
 	public void updatePerformed(EventObject e) {

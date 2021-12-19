@@ -1,0 +1,45 @@
+<cenovnikLista>
+  <cenovnik>
+    <cenovnik>
+      <jeloId>1</jeloId>
+      <cene>
+        <cena>
+          <id>1</id>
+          <vrednost>350.0</vrednost>
+          <popust>0.0</popust>
+          <kreirana>2020-07-04</kreirana>
+        </cena>
+        <cena>
+          <id>2</id>
+          <vrednost>280.0</vrednost>
+          <popust>0.0</popust>
+          <kreirana>2021-05-10</kreirana>
+        </cena>
+      </cene>
+    </cenovnik>
+    <cenovnik>
+      <jeloId>2</jeloId>
+      <cene>
+        <cena reference="../../../cenovnik/cene/cena[2]"/>
+        <cena>
+          <id>3</id>
+          <vrednost>1100.0</vrednost>
+          <popust>0.0</popust>
+          <kreirana>2018-03-12</kreirana>
+        </cena>
+      </cene>
+    </cenovnik>
+    <cenovnik>
+      <jeloId>3</jeloId>
+      <cene>
+        <cena reference="../../../cenovnik[2]/cene/cena[2]"/>
+        <cena>
+          <id>4</id>
+          <vrednost>1100.0</vrednost>
+          <popust>0.0</popust>
+          <kreirana>2019-03-12</kreirana>
+        </cena>
+      </cene>
+    </cenovnik>
+  </cenovnik>
+</cenovnikLista>
