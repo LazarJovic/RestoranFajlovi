@@ -64,11 +64,10 @@ public class PocetniProzor extends JFrame implements WindowListener {
 
 	@Override
 	public void windowClosing(WindowEvent e) {
-		JFrame frame= (JFrame) e.getComponent();
-		int code=JOptionPane.showConfirmDialog(frame, "Da li ste sigurni da želite da zatvorite aplikaciju?","Zatvaranje aplikacije?",JOptionPane.YES_NO_OPTION);
-		if (code!=JOptionPane.YES_OPTION){
-		
-			frame.setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE);
+		JFrame pocetniProzor = (JFrame) e.getComponent();
+		int code = JOptionPane.showConfirmDialog(pocetniProzor, "Da li ste sigurni da želite da zatvorite aplikaciju?","Zatvaranje aplikacije?",JOptionPane.YES_NO_OPTION);
+		if (code != JOptionPane.YES_OPTION){
+			pocetniProzor.setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE);
 		}
 		else{
 			Serijalizacija serijalizacija = new Serijalizacija();
@@ -77,7 +76,7 @@ public class PocetniProzor extends JFrame implements WindowListener {
 			} catch (IOException e1) {
 				JOptionPane.showMessageDialog(null, "Nije moguće sačuvati aplikaciju.", "Greška pri čuvanju aplikacije", JOptionPane.ERROR_MESSAGE);
 			}
-			frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+			pocetniProzor.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		}
 	}
 
